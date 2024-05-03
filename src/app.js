@@ -44,3 +44,29 @@ export const getTotal = (items = [], discount = 0) => {
   }, 0)
   return total - (total * discount) / 100
 }
+
+/**
+ * @function getScore - суммирует все баллы, представленные в объекте scores.
+ * @param {Object} scores - объект с парами ключ-значение, где ключ - это имя студента, а значение - баллы успеваемости.
+ * @returns {number} - сумма всех баллов.
+ */
+function getScore(scores) {
+  return Object.values(scores).reduce((total, score) => {
+    if (typeof score === 'number') {
+      return total + score
+    } else {
+      console.error('некорректное значение балла:', score)
+      return total
+    }
+  }, 0)
+}
+
+// Пример работы функции getScore:
+const scores = {
+  Anna: 10,
+  Olga: 1,
+  Ivan: 5,
+  Alex: 'не число',
+}
+
+console.log(getScore(scores)) // Выведет 16 и ошибку в консоль
