@@ -12,7 +12,7 @@
     "codestyle": "run-p lint format",
     "codestyle:fix": "run-s lint:fix format:fix",
     "build": "babel src --out-dir build --source-maps inline",
-    "test": "jest --setupFiles dotenv/config",
+    "test": "jest --verbose --setupFiles dotenv/config",
     "coverage": "jest --coverage"
   },
   "keywords": [],

@@ -1,0 +1,3 @@
+// Добавить --runInBand для синхронного запуска
+"test": "jest --runInBand ...",
+"coverage": "jest --runInBand ..."

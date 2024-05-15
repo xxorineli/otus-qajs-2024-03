@@ -1,0 +1,41 @@
+// "Замороженный конфиг"
+
+import 'dotenv/bookstoreAuthConfig'
+
+const bookstoreAuthConfig = {
+  baseURL: process.env.TEST_BASE_API_URL,
+  userId: process.env.TEST_USER_ID,
+  username: process.env.TEST_USERNAME,
+  password: process.env.TEST_PASSWORD,
+}
+
+export default Object.freeze(bookstoreAuthConfig)
+
+// Конфиг со значениями по-умолчанию
+
+import 'dotenv/bookstoreAuthConfig'
+
+const bookstoreAuthConfig = {
+  baseURL: process.env.TEST_BASE_API_URL ?? '...',
+  userId: process.env.TEST_USER_ID ?? '...',
+  username: process.env.TEST_USERNAME ?? '...',
+  password: process.env.TEST_PASSWORD ?? '...',
+}
+
+export default Object.freeze(bookstoreAuthConfig)
+
+// Определяет тестовые данные
+const bookstoreAnyConfig = {
+  baseURL: 'https://bookstore.demoqa.com',
+  userId: '?',
+  userName: '?',
+  userNameEmpty: '',
+  userNameIncorrect: '?_',
+  password: 'Password123!',
+  passwordEmpty: '',
+  passwordIncorrect: 'Password123!_',
+  token:
+    '',
+}
+
+export default bookstoreAnyConfig
