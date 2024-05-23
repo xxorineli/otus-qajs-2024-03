@@ -1,0 +1,37 @@
+### 1 Create user
+POST https://bookstore.demoqa.com/Account/v1/User
+Content-Type: application/json
+
+{
+  "userName": "otus-qajs-zorin",
+  "password": "Password123!"
+}
+
+### 2 Generate token
+POST https://bookstore.demoqa.com/Account/v1/GenerateToken
+Content-Type: application/json
+
+{
+"userName": "otus-qajs-zorin",
+"password": "Password123!"
+}
+
+### 3 Authorization
+POST https://bookstore.demoqa.com/Account/v1/Authorized
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2NDgzMDA5fQ.NqHwSE8cuMg-2EAeEmr3rlyjNGM8b6o54gKCEerUx8U
+
+{
+  "userName": "otus-qajs-zorin",
+  "password": "Password123!"
+}
+
+### 4 Get user info
+GET https://bookstore.demoqa.com/Account/v1/User/6adcbbbd-ac9f-4383-862a-d8c51bac3afc
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2NDg2MTYwfQ.Wj0BeiCz4dnTHd5f-HoOS1sNJ2VMwPREfJH-1lhCSMA
+
+### 5 Delete user
+DELETE https://bookstore.demoqa.com/Account/v1/User/6adcbbbd-ac9f-4383-862a-d8c51bac3afc
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2NDg2NTM1fQ.bxrllSR4Ts3SDtvdJQKCwDqJk22CCxcYThhjDfiN5Cc
