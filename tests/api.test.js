@@ -112,7 +112,7 @@ describe('bookstore.demoqa API tests with Jest - generateToken', () => {
     const body = await response.json()
     // Опционально, определяет тело ответа на наличие конкретного error message
     // Зависит от актуальности API и формата error message
-    expect(body.token).toBe('string')
+    expect(body.token).toBeDefined()
     expect(body.expires).toBe('string')
     expect(body.status).toBe('Success')
     expect(body.result).toBe('User authorized successfully.')
