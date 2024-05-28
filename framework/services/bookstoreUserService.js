@@ -22,8 +22,8 @@ const createUser = async ({ userName, password }) => {
 }
 
 // Получение информации о пользователе
-const getUser = async ({ userID, token }) => {
-  const response = await client.get(`/Account/v1/User/${userID}`, {
+const getUser = async ({ userId, token }) => {
+  const response = await client.get(`/Account/v1/User/${userId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -37,8 +37,8 @@ const getUser = async ({ userID, token }) => {
 }
 
 // Удаление пользователя
-const deleteUser = async ({ userID, token }) => {
-  const response = await client.delete(`/Account/v1/User/${userID}`, {
+const deleteUser = async ({ userId, token }) => {
+  const response = await client.delete(`/Account/v1/User/${userId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

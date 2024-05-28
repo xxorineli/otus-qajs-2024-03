@@ -12,7 +12,7 @@ describe('проверка информации о пользователе', ()
     token = responseToken.data.token
 
     const response = await userService.get({
-      userID: config.userID,
+      userId: config.userId,
       token,
     })
     expect(response.status).toBe(200)
@@ -26,7 +26,7 @@ describe('проверка информации о пользователе', ()
     token = responseToken.data.token
 
     const response = await userService.get({
-      userID: config.userID,
+      userId: config.userId,
     })
     expect(response.status).toBe(401)
     expect(response.data.code).toBe('1200')
@@ -44,7 +44,7 @@ describe('проверка удаления пользователя', () => {
     token = responseToken.data.token
 
     const response = await userService.delete({
-      userID: config.userID,
+      userId: config.userId,
       token,
     })
     expect(response.status).toBe(204)
@@ -58,7 +58,7 @@ describe('проверка удаления пользователя', () => {
     token = responseToken.data.token
 
     const response = await userService.delete({
-      userID: config.userID,
+      userId: config.userId,
     })
     expect(response.status).toBe(401)
     expect(response.data.code).toBe('1200')
