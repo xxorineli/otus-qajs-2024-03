@@ -13,7 +13,7 @@ const bookstoreConfig = {
   baseURL: 'https://bookstore.demoqa.com',
   userName: 'otus-qajs-zorin',
   password: 'Password123!',
-  userID: 'f7781367-df56-4545-81d6-8337399e27df',
+  userId: '897d4291-9b5d-4d29-bc71-3dd13b83be33',
 }
 
 export default bookstoreConfig

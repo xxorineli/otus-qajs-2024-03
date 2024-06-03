@@ -1,4 +1,5 @@
 import config from '../config/bookstoreConfig'
+import { cached } from '../utils/cache'
 
 const generateToken = async ({ userName, password }) => {
   const response = await fetch(`${config.baseURL}/Account/v1/GenerateToken`, {
@@ -35,7 +36,21 @@ const authorized = async ({ userName, password }) => {
   }
 }
 
+const generateTokenCached = cached(generateToken)
+
+const getTokenFromCache = async ({ userName, password }) => {
+  const response = await generateTokenCached({
+    userName,
+    password,
+  })
+  if (typeof response.data.token !== 'string') {
+    throw new Error('No token in response')
+  }
+  return response.data.token
+}
+
 export default {
   generateToken,
+  getTokenFromCache,
   authorized,
 }

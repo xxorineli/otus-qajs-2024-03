@@ -19,7 +19,7 @@ Content-Type: application/json
 ### 3 Authorization
 POST https://bookstore.demoqa.com/Account/v1/Authorized
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2NDgzMDA5fQ.NqHwSE8cuMg-2EAeEmr3rlyjNGM8b6o54gKCEerUx8U
+Authorization: Bearer
 
 {
   "userName": "otus-qajs-zorin",
@@ -29,9 +29,54 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90d
 ### 4 Get user info
 GET https://bookstore.demoqa.com/Account/v1/User/6adcbbbd-ac9f-4383-862a-d8c51bac3afc
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2NDg2MTYwfQ.Wj0BeiCz4dnTHd5f-HoOS1sNJ2VMwPREfJH-1lhCSMA
+Authorization: Bearer
 
 ### 5 Delete user
-DELETE https://bookstore.demoqa.com/Account/v1/User/6adcbbbd-ac9f-4383-862a-d8c51bac3afc
+DELETE https://bookstore.demoqa.com/Account/v1/User/7b04b28c-cb78-4f76-9bca-516f71034ecc
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2NDg2NTM1fQ.bxrllSR4Ts3SDtvdJQKCwDqJk22CCxcYThhjDfiN5Cc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2ODI1NzAxfQ.64RGzjIx4W7CfyN8mTTjiCcXefCnt86m2v6tuuS3U1o
+
+### 6 Get list of books
+GET https://bookstore.demoqa.com/BookStore/v1/Books
+Content-Type: application/json
+
+### 7 Add list of books
+POST https://bookstore.demoqa.com/BookStore/v1/Books
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2OTMyMTc1fQ.SBlLNG1k1XUDZzPFtSKYXWxnoUiazzObP97xWF6HBWw
+
+{
+  "userId": "897d4291-9b5d-4d29-bc71-3dd13b83be33",
+  "collectionOfIsbns": [
+    {
+      "isbn": "9781449325862"
+    },
+    {
+      "isbn": "9781449331818"
+    }
+  ]
+}
+
+### 8 Replace book ISBN
+PUT https://bookstore.demoqa.com/BookStore/v1/Books/9781449325862
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2OTIxOTg5fQ.-4NjT71jjViR0MhklMZwZC4SSECaAAKDt-PEEiiZBVg
+
+{
+  "userId": "897d4291-9b5d-4d29-bc71-3dd13b83be33",
+  "isbn": "9781449331818"
+}
+
+### 9 Get book info
+GET https://bookstore.demoqa.com/BookStore/v1/Book?ISBN=9781449331818
+Content-Type: application/json
+
+### 10 Delete book
+DELETE https://bookstore.demoqa.com/BookStore/v1/Book
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im90dXMtcWFqcy16b3JpbiIsInBhc3N3b3JkIjoiUGFzc3dvcmQxMjMhIiwiaWF0IjoxNzE2OTMyMTc1fQ.SBlLNG1k1XUDZzPFtSKYXWxnoUiazzObP97xWF6HBWw
+
+{
+  "userId": "897d4291-9b5d-4d29-bc71-3dd13b83be33",
+  "isbn": "9781449331818"
+}
