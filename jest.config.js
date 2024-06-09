@@ -5,6 +5,14 @@
 
 /** @type {import('jest').Config} */
 const config = {
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: './reports/html-report',
+      filename: 'index.html',
+      openReport: !!process.env.CI
+    }]
+  ],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
   // Stop running tests after `n` failures
@@ -141,6 +149,10 @@ const config = {
   // watchPathIgnorePatterns: [],
   // Whether to use watchman for file crawling
   // watchman: true,
+}
+
+if (process.env.CI) {
+  config.reporters.push(['github-actions', {silent: false}])
 }
 
 module.exports = config
