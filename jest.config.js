@@ -7,11 +7,14 @@
 const config = {
   reporters: [
     'default',
-    ['jest-html-reporters', {
-      publicPath: './reports/html-report',
-      filename: 'index.html',
-      openReport: !!process.env.CI
-    }]
+    [
+      'jest-html-reporters',
+      {
+        publicPath: './reports/html-report',
+        filename: 'index.html',
+        openReport: !!process.env.CI,
+      },
+    ],
   ],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -119,11 +122,12 @@ const config = {
   // testEnvironmentOptions: {},
   // Adds a location field to test results
   // testLocationInResults: false,
+
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: [
+    "**/tests/**/?(*.)+(spec|test).[tj]s?(x)"
+  ],
+
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
   //   "\\\\node_modules\\\\"
@@ -152,7 +156,7 @@ const config = {
 }
 
 if (process.env.CI) {
-  config.reporters.push(['github-actions', {silent: false}])
+  config.reporters.push(['github-actions', { silent: false }])
 }
 
 module.exports = config

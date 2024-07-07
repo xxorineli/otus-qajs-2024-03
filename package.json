@@ -15,7 +15,12 @@
     "codestyle:fix": "run-s lint:fix format:fix",
     "build": "babel src --out-dir build --source-maps inline",
     "test": "jest --verbose --setupFiles dotenv/config",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "test:e2e": "playwright test --ui",
+    "test:e2e:ci": "playwright test",
+    "test:e2e:trace": "playwright test --trace on",
+    "test:e2e:slow": "cross-env PLAYWRIGHT_SLOW_MO=1000 playwright test --headed",
+    "test:e2e:show": "playwright show-report"
   },
   "keywords": [],
   "author": "Eli Zorin <xxorineli@gmail.com>",
@@ -28,14 +33,15 @@
     "url": "https://github.com/xxorineli/otus-qajs-2024-03/issues"
   },
   "homepage": "https://github.com/xxorineli/otus-qajs-2024-03#readme",
-
   "devDependencies": {
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.24.0",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.24.0",
     "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.45.1",
     "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.10",
     "babel-jest": "^29.7.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
