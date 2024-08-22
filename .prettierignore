@@ -1,3 +1,7 @@
 reports
 build
-package111.json
+coverage
+allure-results
+allure-report
+playwright-report
+test-results
